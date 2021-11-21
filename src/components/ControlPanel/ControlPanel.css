@@ -1,0 +1,82 @@
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 25em;
+  flex-shrink: 1;
+  margin: 0 auto;
+  background-color: var(--background-alt);
+  padding: 1em;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1240px) {
+  .btnContainer {
+    max-width: none;
+  }
+}
+
+h4 {
+  text-align: center;
+}
+
+.info p {
+  padding: 0.5em;
+}
+
+.timeRangeBtnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeRangeBtn :hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  margin: 0.5em auto;
+}
+.switch input[type='checkbox'] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.switch label {
+  display: inline-block;
+  width: 2rem;
+  height: 1rem;
+  background-color: grey;
+  border: 2px solid grey;
+  box-sizing: content-box;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.switch label:after {
+  position: relative;
+  display: inline-block;
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  bottom: 2px;
+  left: 0px;
+  border-radius: 500px;
+  background-color: #fff;
+  transition: 0.3s all ease-in-out;
+}
+.switch label:active:after {
+  width: 1.2rem;
+}
+
+.switch input:checked + label {
+  background-color: teal;
+  border: 2px solid teal;
+}
+.switch input:checked + label:after {
+  left: 100%;
+  transform: translateX(-100%);
+}

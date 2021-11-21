@@ -1,0 +1,76 @@
+.rankings {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    float: inherit;
+}
+
+.rankingsHeader {
+    text-align: center;
+    margin: 0 auto 0.4em auto;
+    background-color: var(--background-alt);
+    border-radius: 2em;
+    width: 30%;
+}
+
+.lengthBtnContainer {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    background-color: var(--background-alt);
+    border-radius: 2em;
+}
+
+.lengthBtnContainer button {
+    width: 12em;
+    white-space: nowrap;
+}
+
+hr {
+    max-width: 75%;
+}
+
+@media only screen and (max-width: 1300px){
+    .rankings{ 
+    display: block;
+    }
+    /* .lengthBtnContainer {
+        width: 100%;
+    } */
+
+    hr {
+        max-width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    .lengthBtnContainer {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .lengthBtnContainer button {
+        white-space: pre-wrap
+    }
+
+    .rankingsHeader{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .lengthBtnContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .lengthBtnContainer button {
+        max-width: 70%;
+    }
+
+    .rankingsHeader{
+        width: auto;
+    }
+}

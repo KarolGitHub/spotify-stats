@@ -1,0 +1,23 @@
+.statsContainer {
+  /* border-collapse: separate; */
+  /* perspective: 1px; */
+  overflow: hidden;
+  border-radius: 2em;
+  /* padding: 0 1em; */
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-between;
+  min-height: 35em;
+}
+
+@media only screen and (max-width: 1240px) {
+  .statsContainer {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .statsContainer {
+    display: block;
+  }
+}

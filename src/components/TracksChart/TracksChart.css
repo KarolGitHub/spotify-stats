@@ -1,0 +1,21 @@
+.chartContainer {
+  position: relative;
+  flex-grow: 2;
+  flex-basis: 480px;
+  text-align: center;
+  background-color: var(--foreground);
+  padding: 1em;
+}
+
+.chartContainer h2 {
+  margin: 0 auto 0.4em auto;
+  background-color: var(--background-alt);
+  border-radius: 2em;
+  width: 50%;
+}
+
+#tracksChart {
+  max-width: 30em;
+  max-height: 30em;
+  margin: 0 auto;
+}

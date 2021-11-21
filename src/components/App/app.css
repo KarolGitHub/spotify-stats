@@ -1,0 +1,120 @@
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Sans Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 600;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --btn-hover-light: rgba(0, 0, 35, 0.10);
+    --btn-hover-dark: rgba(98, 98, 128, 0.15);
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs:0.25em 0.25em 0.75em rgba(0,0,0,.25),
+         0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+.light {
+    --background: #e9e9e9;
+    --background-alt: #ffffff;
+    --foreground: #e0e0e0;
+    --accent: #afecfdfa;
+    --font-color-primary:  #000000;
+    --font-color-secondary: #ffffff;
+    --visited: #551A8B; 
+    --link: #0000EE;
+}
+
+.dark {
+    --background: #2b364b;
+    --background-alt: #000000ab;
+    --foreground: rgba(152, 160, 181, 0.151);
+    --accent: #8ce6ffa0;
+    --font-color-primary:  rgb(255, 255, 255);
+    --font-color-secondary:  rgb(0, 0, 0);
+    --visited: rgb(211, 138, 138);
+    --link: #8db2e5;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--font-color-primary);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+
+   
+}
+
+button {
+    background-color: var(--font-color-primary);
+    color: var(--font-color-secondary);
+    padding:0.35em 1.2em;
+    border:0.1em solid var(--font-color-primary);
+    margin:0.3em 0.3em 0.3em 0.3em;
+    text-align:center;
+    transition: all 0.15s;
+    border-radius: 2em;
+}
+
+button:hover {
+transform: scale(1.06);
+}
+
+.btnSelected {
+    transition-property: all;
+    flex-grow: 1;
+    transition-duration: 400ms;
+    background-color: var(--accent);
+    color: var(--font-color-primary);
+}
+
+a {
+    color: var(--link);
+}
+
+a:visited {
+    color: var(--visited);
+}
+
+
+main {
+    margin: 0 auto;
+    width: 95%;
+}
+
+h3 {
+    margin: 1em 0;
+}
+
+.arrow {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid var(--font-color-secondary);
+    border-right: 2px solid var(--font-color-secondary);
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 400ms;
+}
+
+.arrow-up {
+    transform: rotate(-45deg);
+  }
+
+.arrow-down {
+    transform: rotate(135deg);
+}
+
+
