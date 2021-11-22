@@ -1,8 +1,3 @@
-// const process.env.REACT_APP_CLIENT_ID = '1552527e4fb6490facd4fd8f368a6205';
-// const process.env.REACT_APP_CLIENT_ID = '8bff2b786b254da89c480a52bae4b31e';
-// const process.env.REACT_APP_REDIRECT_URI = 'https://spotifycharts-buy3hd89y.vercel.app/';
-
-// const process.env.REACT_APP_REDIRECT_URI = 'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -73,7 +68,7 @@ const Spotify = {
             if (jsonResponse.items <= 0) {
               return;
             }
-            console.log(jsonResponse);
+
             if (jsonResponse.items[0].type === 'artist') {
               spotifyData.push(
                 jsonResponse.items.map((artist) => ({
