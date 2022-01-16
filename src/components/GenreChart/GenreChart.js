@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import Chart from 'chart.js';
 import './GenreChart.css';
 
-const reducer = (acc, cur) => acc + cur;
+// const reducer = (acc, cur) => acc + cur;
 let gerneChart;
 let genreNames = null;
 let genreAmounts = null;
-let genreAmountsTotal;
+// let genreAmountsTotal;
 let duration = 1000;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif";
@@ -39,7 +39,7 @@ class GenreChart extends Component {
       genreAmounts = genreData[1].slice(0, 15);
     }
     genreNames = genreData[0].slice(0, genreAmounts.length);
-    genreAmountsTotal = genreAmounts.reduce(reducer);
+    // genreAmountsTotal = genreAmounts.reduce(reducer);
 
     if (typeof gerneChart !== 'undefined') gerneChart.destroy();
 
@@ -83,19 +83,15 @@ class GenreChart extends Component {
           callbacks: {
             label: function (tooltipItems, data) {
               return (
-                data.labels[tooltipItems.index] +
-                ' ' +
                 Math.round(
                   ((data.datasets[tooltipItems.datasetIndex].data[
                     tooltipItems.index
                   ] /
-                    genreAmountsTotal) *
+                    100) *
                     100 +
                     Number.EPSILON) *
                     100
-                ) /
-                  100 +
-                '%'
+                ) / 100
               );
             },
           },

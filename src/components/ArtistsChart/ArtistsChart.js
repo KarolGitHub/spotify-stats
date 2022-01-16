@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import Chart from 'chart.js';
 import './ArtistsChart.css';
 
-const reducer = (acc, cur) => acc + cur;
+// const reducer = (acc, cur) => acc + cur;
 let artistsChart;
 let artistsNames = null;
 let artistsAmounts = null;
-let artistsAmountsTotal;
+// let artistsAmountsTotal;
 let duration = 1000;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif";
@@ -43,7 +43,7 @@ class ArtistsChart extends Component {
 
     artistsNames = artistsData[0].slice(0, artistsAmounts.length);
     artistsNames = artistsNames.map((artist) => artist.name);
-    artistsAmountsTotal = artistsAmounts.reduce(reducer);
+    // artistsAmountsTotal = artistsAmounts.reduce(reducer);
 
     if (typeof artistsChart !== 'undefined') artistsChart.destroy();
 
@@ -87,19 +87,15 @@ class ArtistsChart extends Component {
           callbacks: {
             label: function (tooltipItems, data) {
               return (
-                data.labels[tooltipItems.index] +
-                ' ' +
                 Math.round(
                   ((data.datasets[tooltipItems.datasetIndex].data[
                     tooltipItems.index
                   ] /
-                    artistsAmountsTotal) *
+                    100) *
                     100 +
                     Number.EPSILON) *
                     100
-                ) /
-                  100 +
-                '%'
+                ) / 100
               );
             },
           },

@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import Chart from 'chart.js';
 import './TracksChart.css';
 
-const reducer = (acc, cur) => acc + cur;
+// const reducer = (acc, cur) => acc + cur;
 let tracksChart;
 let tracksNames = null;
 let tracksAmounts = null;
-let tracksAmountsTotal;
+// let tracksAmountsTotal;
 let duration = 1000;
 
 Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif";
@@ -43,13 +43,13 @@ class TracksChart extends Component {
       tracksAmounts = tracksAmounts.map((track) => track.popularity);
       tracksNames = tracksData[0].slice(0, tracksAmounts.length);
       tracksNames = tracksNames.map((track) => track.name);
-      tracksAmountsTotal = tracksAmounts.reduce(reducer);
+      // tracksAmountsTotal = tracksAmounts.reduce(reducer);
     } else {
       tracksAmounts = tracksData[0].slice(0, 15);
       tracksAmounts = tracksAmounts.map((track) => track.popularity);
       tracksNames = tracksData[0].slice(0, tracksAmounts.length);
       tracksNames = tracksNames.map((track) => track.name);
-      tracksAmountsTotal = tracksAmounts.reduce(reducer);
+      // tracksAmountsTotal = tracksAmounts.reduce(reducer);
     }
 
     if (typeof tracksChart !== 'undefined') tracksChart.destroy();
@@ -94,19 +94,15 @@ class TracksChart extends Component {
           callbacks: {
             label: function (tooltipItems, data) {
               return (
-                data.labels[tooltipItems.index] +
-                ' ' +
                 Math.round(
                   ((data.datasets[tooltipItems.datasetIndex].data[
                     tooltipItems.index
                   ] /
-                    tracksAmountsTotal) *
+                    100) *
                     100 +
                     Number.EPSILON) *
                     100
-                ) /
-                  100 +
-                '%'
+                ) / 100
               );
             },
           },
